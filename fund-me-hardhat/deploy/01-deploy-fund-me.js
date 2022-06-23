@@ -8,10 +8,13 @@ const {
 const verify = require("../utils/verify");
 
 module.exports = async ({ deployments, getNamedAccounts }) => {
-    const { deploy, log } =
-        deployments; /* deploy deploys the contract, log is just console.log */
-    const { deployer } =
-        await getNamedAccounts(); /* gets the account through which the contract will be deployed */
+    const {
+        deploy,
+        log,
+    } = deployments; /* deploy deploys the contract, log is just console.log */
+    const {
+        deployer,
+    } = await getNamedAccounts(); /* gets the account through which the contract will be deployed */
     const chainId = network.config.chainId; /* chain id of the network */
 
     /* if it is a development server, deploy mocks */

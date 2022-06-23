@@ -12,7 +12,7 @@ const toggleConnection = (connected) => {
 };
 
 const connect = async () => {
-	if (typeof window.ethereum !== undefined) {
+	if (window.ethereum) {
 		try {
 			await window.ethereum.request({ method: "eth_requestAccounts" });
 			toggleConnection(true);
@@ -25,7 +25,7 @@ const connect = async () => {
 const fund = async () => {
 	$("#fundme-message").html("");
 	const ethAmount = $("#eth-amount-input").val();
-	if (typeof window.ethereum !== undefined && ethAmount) {
+	if (window.ethereum && ethAmount) {
 		try {
 			/* get the provider i.e metamask */
 			const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -60,7 +60,7 @@ const fund = async () => {
 
 const withdraw = async () => {
 	$("#fundme-message").html("");
-	if (typeof window.ethereum !== undefined) {
+	if (window.ethereum) {
 		try {
 			const provider = new ethers.providers.Web3Provider(window.ethereum);
 			const signer = provider.getSigner();
@@ -70,7 +70,7 @@ const withdraw = async () => {
 			await listenTxnMining(txnResponse, provider);
 			getBalance();
 			$("#fundme-message")
-				.html('Amount withdrawn')
+				.html("Amount withdrawn")
 				.css("color", "#14DC5D");
 		} catch (err) {
 			$("#fundme-message").css("color", "#DC143C");
@@ -95,7 +95,7 @@ const listenTxnMining = (txnResponse, provider) => {
 };
 
 const getBalance = async () => {
-	if (typeof window.ethereum !== undefined) {
+	if (window.ethereum) {
 		try {
 			const provider = new ethers.providers.Web3Provider(window.ethereum);
 			const totalAmount = ethers.utils.formatEther(
