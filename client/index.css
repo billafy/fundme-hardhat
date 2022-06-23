@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+
+* {
+	font-family: 'Open Sans', 'Segoe UI', sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	max-height: auto;
+	background: #FAF9F6;
+}
+input {
+	outline: none;
+	cursor: pointer;
+}
+.app-container {
+	height: 500px;
+	width: 600px;
+	max-width: 100%;
+	margin: 1rem auto;
+	background: url('https://img.freepik.com/free-vector/colorful-geometric-background_52683-61011.jpg?t=st=1655921152~exp=1655921752~hmac=3f35e7346dc67fadb03ad275b9d8b3c4a8a450e2dddcf4a0635f36e6db308d7b&w=996');
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 0px 5px black;
+	border-radius: 3px;
+}
+.fundme-container {
+	border-radius: 3px;
+	box-shadow: 0px 0px 5px black;
+	background: #FAF9F6;
+	width: 90%;
+	height: 90%;
+}
+.fundme-container input[type='button'] {
+	background: #1434A4;
+	border: 0px;
+	color: #FAF9F6;
+	height: 35px;
+	min-width: 100px;
+	max-width: auto;
+	border-radius: 3px;
+	border: 2px solid transparent;
+	transition: all 0.3s ease;
+}
+.fundme-container input[type='button']:hover {
+	color: #1434A4;
+	background: #FAF9F6;
+	border-color: #1434A4;
+}
+.fundme-heading {
+	text-align: center;
+}
+.fundme-message {
+	font-weight: bold;
+	font-size: 0.8rem;
+	text-align: center;
+	color: #DC143C;
+}
+.fundme-connect {
+	text-align: center;
+}
+.fundme-not-connected {
+	font-weight: bold;
+	font-size: 0.8rem;
+	text-align: center;
+}
+.fundme-fund {
+	margin: 1rem auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.fundme-fund input[type='number'] {
+	border: 2px solid #1434A4;
+	border-radius: 3px 0px 0px 3px;
+	border-right-width: 0px;
+	height: 35px;
+	padding: 0px 0.5rem;
+	width: 150px;
+}
+.fundme-fund input[type='button'] {
+	border-radius: 0px 3px 3px 0px;
+}
+.fundme-withdraw {
+	text-align: center;
+}
+.fundme-amount {
+	text-align: center;
+	font-size: 0.9rem;
+	font-weight: bold;
+}
+.fundme-amount span {
+	color: #FAF9F6 !important;
+	background: #1434A4 !important;
+	border-radius: 3px !important;
+	padding: 0.25rem 0.5rem;
+}
