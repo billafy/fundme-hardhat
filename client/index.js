@@ -12,17 +12,19 @@ const toggleConnection = (connected) => {
 };
 
 const connect = async () => {
+	$("#loading").show();
 	if (window.ethereum) {
 		try {
 			await window.ethereum.request({ method: "eth_requestAccounts" });
 			toggleConnection(true);
-		} catch (err) {
-			console.error(err);
-		}
+		} catch (err) {}
 	} else $("#connect-button").val("Metamask not found");
+	$("#loading").hide();
 };
 
 const fund = async () => {
+	$("#loading").show();
+	$("input").prop("disabled", true);
 	$("#fundme-message").html("");
 	const ethAmount = $("#eth-amount-input").val();
 	if (window.ethereum && ethAmount) {
@@ -56,9 +58,12 @@ const fund = async () => {
 			else $("#fundme-message").html("Transaction error");
 		}
 	}
+	$("#loading").hide();
 };
 
 const withdraw = async () => {
+	$("#loading").show();
+	$("input").prop("disabled", true);
 	$("#fundme-message").html("");
 	if (window.ethereum) {
 		try {
@@ -84,6 +89,7 @@ const withdraw = async () => {
 			else $("#fundme-message").html("Transaction error");
 		}
 	}
+	$("#loading").hide();
 };
 
 const listenTxnMining = (txnResponse, provider) => {
@@ -104,11 +110,11 @@ const getBalance = async () => {
 			$("#amount-funded").html(
 				`Total Amount Funded <span>${totalAmount} ETH</span>`
 			);
-		} catch (err) {
-			console.error(err);
-		}
+		} catch (err) {}
 	}
 };
+
+$("#loading").hide();
 
 getBalance();
 
