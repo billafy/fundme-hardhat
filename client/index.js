@@ -59,6 +59,7 @@ const fund = async () => {
 		}
 	}
 	$("#loading").hide();
+	$("input").prop("disabled", false);
 };
 
 const withdraw = async () => {
@@ -89,6 +90,7 @@ const withdraw = async () => {
 			else $("#fundme-message").html("Transaction error");
 		}
 	}
+	$("input").prop("disabled", false);
 	$("#loading").hide();
 };
 
