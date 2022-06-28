@@ -24,7 +24,6 @@ module.exports = {
 	networks: {
 		hardhat: {
 			chainId: 31337,
-			// gasPrice: 130000000000,
 		},
 		rinkeby: {
 			url: RINKEBY_RPC_URL,
