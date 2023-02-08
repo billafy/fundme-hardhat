@@ -24,6 +24,6 @@
     "coverage": "hardhat coverage"
   },
   "dependencies": {
-    "solhint": "^3.3.7"
+    "solhint": "^3.3.8"
   }
 }
